@@ -1,0 +1,574 @@
+[
+  {
+    "scenario_code": "NORMAL_SUPPORTED_CONTROL",
+    "description": "Control case: clean supported historical state at t=45000.",
+    "expected_gate_status": "PASS",
+    "actual_gate_status": "PASS",
+    "expected_decision": "OPERATE",
+    "actual_decision": "OPERATE",
+    "expected_reason_codes": [],
+    "actual_reason_codes": [],
+    "fallback_used": false,
+    "ai_action_withheld": true,
+    "checks": [
+      {
+        "check_name": "DATA_COMPLETENESS",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "required_fields_present": 6
+        }
+      },
+      {
+        "check_name": "SENSOR_VALIDITY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "validated_sensor_signals": 69
+        }
+      },
+      {
+        "check_name": "PHYSICS_CONSISTENCY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "m2_primary_status": "VALID",
+          "thermal_balance_error": 0.01014828520848838,
+          "lmtd": 44.373657122719415,
+          "ua": 202716.7163087006
+        }
+      },
+      {
+        "check_name": "REGIME_SUPPORT",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "max_z_score": 2.182820695499223,
+          "z_score_threshold": 4.0
+        }
+      }
+    ],
+    "passed": true,
+    "evidence": {
+      "m5_reason_codes": [],
+      "fallback_action": "OPERATE"
+    }
+  },
+  {
+    "scenario_code": "MISSING_CRITICAL_MEASUREMENT",
+    "description": "Missing critical required input measurement (Tube_T_In).",
+    "expected_gate_status": "ABSTAIN",
+    "actual_gate_status": "ABSTAIN",
+    "expected_decision": "ABSTAIN",
+    "actual_decision": "ABSTAIN",
+    "expected_reason_codes": [
+      "DATA_INCOMPLETE"
+    ],
+    "actual_reason_codes": [
+      "DATA_INCOMPLETE"
+    ],
+    "fallback_used": true,
+    "ai_action_withheld": true,
+    "checks": [
+      {
+        "check_name": "DATA_COMPLETENESS",
+        "status": "FAIL",
+        "reason_code": "DATA_INCOMPLETE",
+        "evidence": {
+          "missing_fields": [
+            "E01_Crude_Tube_T_In_degC"
+          ],
+          "required_count": 6,
+          "missing_count": 1
+        }
+      },
+      {
+        "check_name": "SENSOR_VALIDITY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "validated_sensor_signals": 68
+        }
+      },
+      {
+        "check_name": "PHYSICS_CONSISTENCY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "m2_primary_status": "VALID",
+          "thermal_balance_error": 0.01014828520848838,
+          "lmtd": 44.373657122719415,
+          "ua": 202716.7163087006
+        }
+      },
+      {
+        "check_name": "REGIME_SUPPORT",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "max_z_score": 2.182820695499223,
+          "z_score_threshold": 4.0
+        }
+      }
+    ],
+    "passed": true,
+    "evidence": {
+      "m5_reason_codes": [
+        "DATA_INCOMPLETE"
+      ],
+      "fallback_action": "OPERATE"
+    }
+  },
+  {
+    "scenario_code": "INVALID_SENSOR_VALUE",
+    "description": "Sensor domain out of physical bounds (T_In = 999.0 degC).",
+    "expected_gate_status": "ABSTAIN",
+    "actual_gate_status": "ABSTAIN",
+    "expected_decision": "ABSTAIN",
+    "actual_decision": "ABSTAIN",
+    "expected_reason_codes": [
+      "SENSOR_INVALID"
+    ],
+    "actual_reason_codes": [
+      "SENSOR_INVALID"
+    ],
+    "fallback_used": true,
+    "ai_action_withheld": true,
+    "checks": [
+      {
+        "check_name": "DATA_COMPLETENESS",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "required_fields_present": 6
+        }
+      },
+      {
+        "check_name": "SENSOR_VALIDITY",
+        "status": "FAIL",
+        "reason_code": "SENSOR_INVALID",
+        "evidence": {
+          "violations": [
+            "Value 999.0 for Tube_T_In out of configured bounds [0.0, 450.0]"
+          ],
+          "nonfinite_fields": []
+        }
+      },
+      {
+        "check_name": "PHYSICS_CONSISTENCY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "m2_primary_status": "VALID",
+          "thermal_balance_error": 0.01014828520848838,
+          "lmtd": 44.373657122719415,
+          "ua": 202716.7163087006
+        }
+      },
+      {
+        "check_name": "REGIME_SUPPORT",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "max_z_score": 2.182820695499223,
+          "z_score_threshold": 4.0
+        }
+      }
+    ],
+    "passed": true,
+    "evidence": {
+      "m5_reason_codes": [
+        "SENSOR_INVALID"
+      ],
+      "fallback_action": "OPERATE"
+    }
+  },
+  {
+    "scenario_code": "THERMAL_PHYSICS_INCONSISTENCY",
+    "description": "Thermodynamic heat balance violation and temperature cross.",
+    "expected_gate_status": "ABSTAIN",
+    "actual_gate_status": "ABSTAIN",
+    "expected_decision": "ABSTAIN",
+    "actual_decision": "ABSTAIN",
+    "expected_reason_codes": [
+      "PHYSICS_INCONSISTENT"
+    ],
+    "actual_reason_codes": [
+      "PHYSICS_INCONSISTENT"
+    ],
+    "fallback_used": true,
+    "ai_action_withheld": true,
+    "checks": [
+      {
+        "check_name": "DATA_COMPLETENESS",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "required_fields_present": 6
+        }
+      },
+      {
+        "check_name": "SENSOR_VALIDITY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "validated_sensor_signals": 71
+        }
+      },
+      {
+        "check_name": "PHYSICS_CONSISTENCY",
+        "status": "FAIL",
+        "reason_code": "PHYSICS_INCONSISTENT",
+        "evidence": {
+          "m2_primary_status": "NEAR_ZERO_DT",
+          "m2_reasons": [
+            "NEAR_ZERO_OR_NEGATIVE_DT",
+            "INVALID_LMTD_DOMAIN"
+          ],
+          "thermal_balance_error": null,
+          "lmtd": null,
+          "ua": null
+        }
+      },
+      {
+        "check_name": "REGIME_SUPPORT",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "max_z_score": 2.182820695499223,
+          "z_score_threshold": 4.0
+        }
+      }
+    ],
+    "passed": true,
+    "evidence": {
+      "m5_reason_codes": [
+        "PHYSICS_INCONSISTENT"
+      ],
+      "fallback_action": "OPERATE"
+    }
+  },
+  {
+    "scenario_code": "REGIME_SHIFT_OOD",
+    "description": "Established +6.0 std operating regime shift outside training support.",
+    "expected_gate_status": "ABSTAIN",
+    "actual_gate_status": "ABSTAIN",
+    "expected_decision": "ABSTAIN",
+    "actual_decision": "ABSTAIN",
+    "expected_reason_codes": [
+      "REGIME_OOD"
+    ],
+    "actual_reason_codes": [
+      "REGIME_OOD"
+    ],
+    "fallback_used": true,
+    "ai_action_withheld": true,
+    "checks": [
+      {
+        "check_name": "DATA_COMPLETENESS",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "required_fields_present": 6
+        }
+      },
+      {
+        "check_name": "SENSOR_VALIDITY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "validated_sensor_signals": 69
+        }
+      },
+      {
+        "check_name": "PHYSICS_CONSISTENCY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "m2_primary_status": "VALID",
+          "thermal_balance_error": 0.01014828520848838,
+          "lmtd": 44.373657122719415,
+          "ua": 202716.7163087006
+        }
+      },
+      {
+        "check_name": "REGIME_SUPPORT",
+        "status": "FAIL",
+        "reason_code": "REGIME_OOD",
+        "evidence": {
+          "ood_features": [
+            "Feature 'Crude_API' value 4.1053e+01 has Z-score 30.34 > threshold 4.0"
+          ],
+          "max_z_score": 30.339738561009675,
+          "z_score_threshold": 4.0
+        }
+      }
+    ],
+    "passed": true,
+    "evidence": {
+      "m5_reason_codes": [
+        "REGIME_OOD"
+      ],
+      "fallback_action": "OPERATE"
+    }
+  },
+  {
+    "scenario_code": "INSUFFICIENT_FORECAST_HISTORY",
+    "description": "Forecast inputs missing or incomplete.",
+    "expected_gate_status": "PASS",
+    "actual_gate_status": "PASS",
+    "expected_decision": "ABSTAIN",
+    "actual_decision": "ABSTAIN",
+    "expected_reason_codes": [],
+    "actual_reason_codes": [],
+    "fallback_used": false,
+    "ai_action_withheld": true,
+    "checks": [
+      {
+        "check_name": "DATA_COMPLETENESS",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "required_fields_present": 6
+        }
+      },
+      {
+        "check_name": "SENSOR_VALIDITY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "validated_sensor_signals": 69
+        }
+      },
+      {
+        "check_name": "PHYSICS_CONSISTENCY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "m2_primary_status": "VALID",
+          "thermal_balance_error": 0.01014828520848838,
+          "lmtd": 44.373657122719415,
+          "ua": 202716.7163087006
+        }
+      },
+      {
+        "check_name": "REGIME_SUPPORT",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "max_z_score": 2.182820695499223,
+          "z_score_threshold": 4.0
+        }
+      }
+    ],
+    "passed": true,
+    "evidence": {
+      "m5_reason_codes": [],
+      "fallback_action": "ABSTAIN"
+    }
+  },
+  {
+    "scenario_code": "FORECAST_UNAVAILABLE",
+    "description": "Explicit FORECAST_UNAVAILABLE result from forecast layer.",
+    "expected_gate_status": "PASS",
+    "actual_gate_status": "PASS",
+    "expected_decision": "ABSTAIN",
+    "actual_decision": "ABSTAIN",
+    "expected_reason_codes": [],
+    "actual_reason_codes": [],
+    "fallback_used": false,
+    "ai_action_withheld": true,
+    "checks": [
+      {
+        "check_name": "DATA_COMPLETENESS",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "required_fields_present": 6
+        }
+      },
+      {
+        "check_name": "SENSOR_VALIDITY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "validated_sensor_signals": 69
+        }
+      },
+      {
+        "check_name": "PHYSICS_CONSISTENCY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "m2_primary_status": "VALID",
+          "thermal_balance_error": 0.01014828520848838,
+          "lmtd": 44.373657122719415,
+          "ua": 202716.7163087006
+        }
+      },
+      {
+        "check_name": "REGIME_SUPPORT",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "max_z_score": 2.182820695499223,
+          "z_score_threshold": 4.0
+        }
+      }
+    ],
+    "passed": true,
+    "evidence": {
+      "m5_reason_codes": [],
+      "fallback_action": "ABSTAIN"
+    }
+  },
+  {
+    "scenario_code": "MULTIPLE_SIMULTANEOUS_FAILURES",
+    "description": "Simultaneous missing measurement, invalid sensor, and regime shift.",
+    "expected_gate_status": "ABSTAIN",
+    "actual_gate_status": "ABSTAIN",
+    "expected_decision": "ABSTAIN",
+    "actual_decision": "ABSTAIN",
+    "expected_reason_codes": [
+      "DATA_INCOMPLETE",
+      "SENSOR_INVALID",
+      "REGIME_OOD"
+    ],
+    "actual_reason_codes": [
+      "DATA_INCOMPLETE",
+      "SENSOR_INVALID",
+      "REGIME_OOD"
+    ],
+    "fallback_used": true,
+    "ai_action_withheld": true,
+    "checks": [
+      {
+        "check_name": "DATA_COMPLETENESS",
+        "status": "FAIL",
+        "reason_code": "DATA_INCOMPLETE",
+        "evidence": {
+          "missing_fields": [
+            "E01_Crude_Tube_m_kg_s"
+          ],
+          "required_count": 6,
+          "missing_count": 1
+        }
+      },
+      {
+        "check_name": "SENSOR_VALIDITY",
+        "status": "FAIL",
+        "reason_code": "SENSOR_INVALID",
+        "evidence": {
+          "violations": [
+            "Value 999.0 for Tube_T_In out of configured bounds [0.0, 450.0]"
+          ],
+          "nonfinite_fields": []
+        }
+      },
+      {
+        "check_name": "PHYSICS_CONSISTENCY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "m2_primary_status": "VALID",
+          "thermal_balance_error": 0.01014828520848838,
+          "lmtd": 44.373657122719415,
+          "ua": 202716.7163087006
+        }
+      },
+      {
+        "check_name": "REGIME_SUPPORT",
+        "status": "FAIL",
+        "reason_code": "REGIME_OOD",
+        "evidence": {
+          "ood_features": [
+            "Feature 'Crude_API' value 4.1053e+01 has Z-score 30.34 > threshold 4.0"
+          ],
+          "max_z_score": 30.339738561009675,
+          "z_score_threshold": 4.0
+        }
+      }
+    ],
+    "passed": true,
+    "evidence": {
+      "m5_reason_codes": [
+        "DATA_INCOMPLETE",
+        "SENSOR_INVALID",
+        "REGIME_OOD"
+      ],
+      "fallback_action": "OPERATE"
+    }
+  },
+  {
+    "scenario_code": "DETERMINISTIC_REPEATED_EXECUTION",
+    "description": "Repeated execution on identical inputs yields byte-for-byte identical output.",
+    "expected_gate_status": "PASS",
+    "actual_gate_status": "PASS",
+    "expected_decision": "OPERATE",
+    "actual_decision": "OPERATE",
+    "expected_reason_codes": [],
+    "actual_reason_codes": [],
+    "fallback_used": false,
+    "ai_action_withheld": false,
+    "checks": [
+      {
+        "check_name": "DATA_COMPLETENESS",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "required_fields_present": 6
+        }
+      },
+      {
+        "check_name": "SENSOR_VALIDITY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "validated_sensor_signals": 69
+        }
+      },
+      {
+        "check_name": "PHYSICS_CONSISTENCY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "m2_primary_status": "VALID",
+          "thermal_balance_error": 0.01014828520848838,
+          "lmtd": 44.373657122719415,
+          "ua": 202716.7163087006
+        }
+      },
+      {
+        "check_name": "REGIME_SUPPORT",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "max_z_score": 2.182820695499223,
+          "z_score_threshold": 4.0
+        }
+      }
+    ],
+    "passed": true,
+    "evidence": {
+      "repeated_runs_identical": true
+    }
+  },
+  {
+    "scenario_code": "SOURCE_DATA_IMMUTABILITY",
+    "description": "Raw dataset SHA-256 remains exactly c8ed7d9c92a0c337f859bcd0374c46e8a4f431a7d37e7257d81dc38a43d4b4d9.",
+    "expected_gate_status": "PASS",
+    "actual_gate_status": "PASS",
+    "expected_decision": "OPERATE",
+    "actual_decision": "OPERATE",
+    "expected_reason_codes": [],
+    "actual_reason_codes": [],
+    "fallback_used": false,
+    "ai_action_withheld": false,
+    "checks": [],
+    "passed": true,
+    "evidence": {
+      "sha256_hash": "c8ed7d9c92a0c337f859bcd0374c46e8a4f431a7d37e7257d81dc38a43d4b4d9",
+      "expected_sha256_hash": "c8ed7d9c92a0c337f859bcd0374c46e8a4f431a7d37e7257d81dc38a43d4b4d9"
+    }
+  }
+]

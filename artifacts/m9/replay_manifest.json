@@ -1,0 +1,24 @@
+{
+  "dataset_checksum": "c8ed7d9c92a0c337f859bcd0374c46e8a4f431a7d37e7257d81dc38a43d4b4d9",
+  "min_timestamp": 0.0,
+  "max_timestamp": 63999.0,
+  "step_size_hours": 1.0,
+  "train_boundary": {
+    "start": 0.0,
+    "end": 44799.0
+  },
+  "val_boundary": {
+    "start": 44800.0,
+    "end": 54399.0
+  },
+  "test_boundary": {
+    "start": 54400.0,
+    "end": 63999.0
+  },
+  "m2_version": "1.0",
+  "m4_version": "1.0",
+  "m5_version": "1.0",
+  "m6_version": "1.0",
+  "m7_version": "1.0",
+  "replay_version": "1.0"
+}

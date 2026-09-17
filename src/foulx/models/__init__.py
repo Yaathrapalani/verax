@@ -1,0 +1,1 @@
+"""FOUL-X models module."""

@@ -1,0 +1,332 @@
+{
+  "timestamp": 54400.0,
+  "exchanger_id": "E01",
+  "scenario_mode": "NORMAL",
+  "raw_state_reference": {
+    "Crude_API": 31.41275077251131,
+    "Crude_Chlorides": 9.872502547433728,
+    "Crude_TAN": 1.0274251290495215,
+    "E01_Crude_Tube_Cp_J_kgK": 2100.0,
+    "E01_Crude_Tube_T_In_degC": 152.5335495936124,
+    "E01_Crude_Tube_T_Out_degC": 193.08437687305465,
+    "E01_Crude_Tube_m_kg_s": 100.2206808074961,
+    "E02_Crude_Tube_Cp_J_kgK": 2100.0,
+    "E02_Crude_Tube_T_In_degC": 192.9400814541766,
+    "E02_Crude_Tube_T_Out_degC": 234.55873656232623,
+    "E02_Crude_Tube_m_kg_s": 101.03207976570236,
+    "E03_Crude_Tube_Cp_J_kgK": 2100.0,
+    "E03_Crude_Tube_T_In_degC": 234.53684941427153,
+    "E03_Crude_Tube_T_Out_degC": 270.95438343597743,
+    "E03_Crude_Tube_m_kg_s": 101.26228842401966,
+    "E04_Crude_Tube_Cp_J_kgK": 2100.0,
+    "E04_Crude_Tube_T_In_degC": 271.1464038304771,
+    "E04_Crude_Tube_T_Out_degC": 304.83905075597823,
+    "E04_Crude_Tube_m_kg_s": 101.40906429706614,
+    "E05_Crude_Tube_Cp_J_kgK": 2100.0,
+    "E05_Crude_Tube_T_In_degC": 304.6227586005748,
+    "E05_Crude_Tube_T_Out_degC": 335.70198035128294,
+    "E05_Crude_Tube_m_kg_s": 100.06785634946074,
+    "Time_hr": 54400.0,
+    "E01_Crude_Tube_Cp_J_kgK.1": 2100.0,
+    "E01_Crude_Tube_T_In_degC.1": 152.5335495936124,
+    "E01_Crude_Tube_T_Out_degC.1": 193.08437687305465,
+    "E01_Crude_Tube_m_kg_s.1": 100.2206808074961,
+    "E01_Design_Duty_W": 9466506.06547254,
+    "E01_HeavyNaphtha_Shell_Cp_J_kgK": 1900.0,
+    "E01_HeavyNaphtha_Shell_T_In_degC": 247.8384804807903,
+    "E01_HeavyNaphtha_Shell_T_Out_degC": 185.29968483545497,
+    "E01_HeavyNaphtha_Shell_m_kg_s": 73.50316707000768,
+    "E02_Crude_Tube_Cp_J_kgK.1": 2100.0,
+    "E02_Crude_Tube_T_In_degC.1": 192.9400814541766,
+    "E02_Crude_Tube_T_Out_degC.1": 234.55873656232623,
+    "E02_Crude_Tube_m_kg_s.1": 101.03207976570236,
+    "E02_Design_Duty_W": 8495869.862856137,
+    "E02_Kero_Shell_Cp_J_kgK": 2000.0,
+    "E02_Kero_Shell_T_In_degC": 281.2363175631369,
+    "E02_Kero_Shell_T_Out_degC": 229.13466258446635,
+    "E02_Kero_Shell_m_kg_s": 82.86683220007669,
+    "E03_Crude_Tube_Cp_J_kgK.1": 2100.0,
+    "E03_Crude_Tube_T_In_degC.1": 234.53684941427153,
+    "E03_Crude_Tube_T_Out_degC.1": 270.95438343597743,
+    "E03_Crude_Tube_m_kg_s.1": 101.26228842401966,
+    "E03_Design_Duty_W": 7740412.526989882,
+    "E03_LightDiesel_Shell_Cp_J_kgK": 2100.0,
+    "E03_LightDiesel_Shell_T_In_degC": 307.2681640405187,
+    "E03_LightDiesel_Shell_T_Out_degC": 268.2325093050562,
+    "E03_LightDiesel_Shell_m_kg_s": 93.66754639969348,
+    "E04_Crude_Tube_Cp_J_kgK.1": 2100.0,
+    "E04_Crude_Tube_T_In_degC.1": 271.1464038304771,
+    "E04_Crude_Tube_T_Out_degC.1": 304.83905075597823,
+    "E04_Crude_Tube_m_kg_s.1": 101.40906429706614,
+    "E04_Design_Duty_W": 7274232.383872086,
+    "E04_LVGO_Shell_Cp_J_kgK": 2200.0,
+    "E04_LVGO_Shell_T_In_degC": 337.55663179917684,
+    "E04_LVGO_Shell_T_Out_degC": 303.10934905169717,
+    "E04_LVGO_Shell_m_kg_s": 94.79254618879496,
+    "E05_Crude_Tube_Cp_J_kgK.1": 2100.0,
+    "E05_Crude_Tube_T_In_degC.1": 304.6227586005748,
+    "E05_Crude_Tube_T_Out_degC.1": 335.70198035128294,
+    "E05_Crude_Tube_m_kg_s.1": 100.06785634946074,
+    "E05_Design_Duty_W": 6524622.633781551,
+    "E05_HeavyDiesel_Shell_Cp_J_kgK": 2150.0,
+    "E05_HeavyDiesel_Shell_T_In_degC": 367.33379009323374,
+    "E05_HeavyDiesel_Shell_T_Out_degC": 333.3654393326187,
+    "E05_HeavyDiesel_Shell_m_kg_s": 88.17537637525265
+  },
+  "physics_state": {
+    "timestamp": 54400.0,
+    "exchanger_id": "E01",
+    "thermal": {
+      "q_tube": 8534466.186231062,
+      "q_shell": 8733919.134884689,
+      "thermal_balance_error": 0.022836592092658585,
+      "delta_t_1": 54.75410360773566,
+      "delta_t_2": 32.76613524184256,
+      "lmtd": 42.82340493494516,
+      "ua": 199294.4325467844,
+      "ua_clean_reference": 207061.2339930766
+    },
+    "fouling": {
+      "rf_derived": 1.8821240249956822e-07,
+      "rf_relative_to_reference": 0.9624903160455816
+    },
+    "data_quality": {
+      "valid_input_count": 8,
+      "invalid_input_count": 0,
+      "primary_status": "VALID",
+      "reasons": []
+    },
+    "availability": {
+      "pressure_available": false,
+      "delta_p_available": false,
+      "cleaning_event_available": false
+    },
+    "provenance": {
+      "source_variables": [
+        "Time_hr",
+        "E01_Crude_Tube_m_kg_s",
+        "E01_Crude_Tube_Cp_J_kgK",
+        "E01_Crude_Tube_T_In_degC",
+        "E01_Crude_Tube_T_Out_degC",
+        "E01_HeavyNaphtha_Shell_m_kg_s",
+        "E01_HeavyNaphtha_Shell_Cp_J_kgK",
+        "E01_HeavyNaphtha_Shell_T_In_degC",
+        "E01_HeavyNaphtha_Shell_T_Out_degC"
+      ],
+      "state_schema_version": "1.0",
+      "calculation_version": "1.0"
+    }
+  },
+  "forecast_state": [
+    {
+      "exchanger_id": "E01",
+      "timestamp": 54400.0,
+      "horizon_hours": 24,
+      "prediction": 2.6986043617723134e-08,
+      "target_definition": "R_f_derived(t+h)",
+      "input_window_start": 54376.0,
+      "input_window_end": 54400.0,
+      "status": "SUCCESS",
+      "unavailable_reasons": [],
+      "provenance": [],
+      "method": "RidgeRegression",
+      "model_version": "1.0"
+    }
+  ],
+  "reliability_state": {
+    "timestamp": 54400.0,
+    "exchanger_id": "E01",
+    "status": "ABSTAIN",
+    "checks": [
+      {
+        "check_name": "DATA_COMPLETENESS",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "required_fields_present": 6
+        }
+      },
+      {
+        "check_name": "SENSOR_VALIDITY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "validated_sensor_signals": 69
+        }
+      },
+      {
+        "check_name": "PHYSICS_CONSISTENCY",
+        "status": "PASS",
+        "reason_code": null,
+        "evidence": {
+          "m2_primary_status": "VALID",
+          "thermal_balance_error": 0.022836592092658585,
+          "lmtd": 42.82340493494516,
+          "ua": 199294.4325467844
+        }
+      },
+      {
+        "check_name": "REGIME_SUPPORT",
+        "status": "FAIL",
+        "reason_code": "REGIME_OOD",
+        "evidence": {
+          "ood_features": [
+            "Feature 'Rf_std_6h' value 1.2343e-07 has Z-score 4.10 > threshold 4.0"
+          ],
+          "max_z_score": 4.104341420672271,
+          "z_score_threshold": 4.0
+        }
+      }
+    ],
+    "reason_codes": [
+      "REGIME_OOD"
+    ],
+    "evidence": {
+      "total_checks_executed": 4,
+      "failed_checks_count": 1,
+      "gate_decision": "ABSTAIN"
+    },
+    "forecast_reference": {
+      "exchanger_id": "E01",
+      "timestamp": 54400.0,
+      "horizon_hours": 24,
+      "prediction": 2.6986043617723134e-08,
+      "model_method": "RidgeRegression"
+    },
+    "provenance": {
+      "gate_version": "1.0",
+      "m2_schema_version": "1.0",
+      "m4_model_version": "1.0",
+      "source_variables": [
+        "Crude_API",
+        "Crude_Chlorides",
+        "Crude_TAN",
+        "E01_Crude_Tube_Cp_J_kgK",
+        "E01_Crude_Tube_T_In_degC",
+        "E01_Crude_Tube_T_Out_degC",
+        "E01_Crude_Tube_m_kg_s",
+        "E02_Crude_Tube_Cp_J_kgK",
+        "E02_Crude_Tube_T_In_degC",
+        "E02_Crude_Tube_T_Out_degC",
+        "E02_Crude_Tube_m_kg_s",
+        "E03_Crude_Tube_Cp_J_kgK",
+        "E03_Crude_Tube_T_In_degC",
+        "E03_Crude_Tube_T_Out_degC",
+        "E03_Crude_Tube_m_kg_s",
+        "E04_Crude_Tube_Cp_J_kgK",
+        "E04_Crude_Tube_T_In_degC",
+        "E04_Crude_Tube_T_Out_degC",
+        "E04_Crude_Tube_m_kg_s",
+        "E05_Crude_Tube_Cp_J_kgK",
+        "E05_Crude_Tube_T_In_degC",
+        "E05_Crude_Tube_T_Out_degC",
+        "E05_Crude_Tube_m_kg_s",
+        "Time_hr",
+        "E01_Crude_Tube_Cp_J_kgK.1",
+        "E01_Crude_Tube_T_In_degC.1",
+        "E01_Crude_Tube_T_Out_degC.1",
+        "E01_Crude_Tube_m_kg_s.1",
+        "E01_Design_Duty_W",
+        "E01_HeavyNaphtha_Shell_Cp_J_kgK",
+        "E01_HeavyNaphtha_Shell_T_In_degC",
+        "E01_HeavyNaphtha_Shell_T_Out_degC",
+        "E01_HeavyNaphtha_Shell_m_kg_s",
+        "E02_Crude_Tube_Cp_J_kgK.1",
+        "E02_Crude_Tube_T_In_degC.1",
+        "E02_Crude_Tube_T_Out_degC.1",
+        "E02_Crude_Tube_m_kg_s.1",
+        "E02_Design_Duty_W",
+        "E02_Kero_Shell_Cp_J_kgK",
+        "E02_Kero_Shell_T_In_degC",
+        "E02_Kero_Shell_T_Out_degC",
+        "E02_Kero_Shell_m_kg_s",
+        "E03_Crude_Tube_Cp_J_kgK.1",
+        "E03_Crude_Tube_T_In_degC.1",
+        "E03_Crude_Tube_T_Out_degC.1",
+        "E03_Crude_Tube_m_kg_s.1",
+        "E03_Design_Duty_W",
+        "E03_LightDiesel_Shell_Cp_J_kgK",
+        "E03_LightDiesel_Shell_T_In_degC",
+        "E03_LightDiesel_Shell_T_Out_degC",
+        "E03_LightDiesel_Shell_m_kg_s",
+        "E04_Crude_Tube_Cp_J_kgK.1",
+        "E04_Crude_Tube_T_In_degC.1",
+        "E04_Crude_Tube_T_Out_degC.1",
+        "E04_Crude_Tube_m_kg_s.1",
+        "E04_Design_Duty_W",
+        "E04_LVGO_Shell_Cp_J_kgK",
+        "E04_LVGO_Shell_T_In_degC",
+        "E04_LVGO_Shell_T_Out_degC",
+        "E04_LVGO_Shell_m_kg_s",
+        "E05_Crude_Tube_Cp_J_kgK.1",
+        "E05_Crude_Tube_T_In_degC.1",
+        "E05_Crude_Tube_T_Out_degC.1",
+        "E05_Crude_Tube_m_kg_s.1",
+        "E05_Design_Duty_W",
+        "E05_HeavyDiesel_Shell_Cp_J_kgK",
+        "E05_HeavyDiesel_Shell_T_In_degC",
+        "E05_HeavyDiesel_Shell_T_Out_degC",
+        "E05_HeavyDiesel_Shell_m_kg_s"
+      ],
+      "dataset_checksum": "c8ed7d9c92a0c337f859bcd0374c46e8a4f431a7d37e7257d81dc38a43d4b4d9"
+    }
+  },
+  "decision_state": {
+    "timestamp": 54400.0,
+    "exchanger_id": "E01",
+    "decision": "ABSTAIN",
+    "reliability_status": "ABSTAIN",
+    "current_rf_derived": 1.8821240249956822e-07,
+    "forecast_horizon_hours": 24,
+    "threshold_rf": 1.5e-07,
+    "threshold_crossing": false,
+    "estimated_crossing_horizon_hours": null,
+    "reason_codes": [
+      "RELIABILITY_ABSTAIN"
+    ],
+    "evidence": {
+      "abstain_reasons": [
+        "RELIABILITY_ABSTAIN"
+      ],
+      "m5_reliability_status": "ABSTAIN",
+      "m5_reason_codes": [
+        "REGIME_OOD"
+      ]
+    },
+    "provenance": {
+      "decision_version": "1.0",
+      "gate_version": "1.0",
+      "m4_model_version": "1.0",
+      "m2_schema_version": "1.0",
+      "human_approval_required": true
+    }
+  },
+  "evidence_reference": {
+    "timestamp": 54400.0,
+    "exchanger_id": "E01",
+    "scenario_mode": "NORMAL",
+    "current_rf_derived": 1.8821240249956822e-07,
+    "ua_current": 199294.4325467844,
+    "ua_clean_ref": 207061.2339930766,
+    "m2_status": "VALID",
+    "m5_gate_status": "ABSTAIN",
+    "m5_failed_checks": [
+      "REGIME_SUPPORT"
+    ],
+    "m6_decision": "ABSTAIN",
+    "human_approval_required": true
+  },
+  "reason_codes": [
+    "VALID_SNAPSHOT"
+  ],
+  "provenance": {
+    "replay_version": "1.0",
+    "m2_version": "1.0",
+    "m4_version": "1.0",
+    "m5_version": "1.0",
+    "m6_version": "1.0",
+    "m7_version": "1.0",
+    "dataset_checksum": "c8ed7d9c92a0c337f859bcd0374c46e8a4f431a7d37e7257d81dc38a43d4b4d9",
+    "no_future_leakage": true
+  }
+}

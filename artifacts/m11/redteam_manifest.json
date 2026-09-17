@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "dataset_checksum": "c8ed7d9c92a0c337f859bcd0374c46e8a4f431a7d37e7257d81dc38a43d4b4d9",
+  "scenarios_evaluated": [
+    "NORMAL_SUPPORTED_CONTROL",
+    "MISSING_CRITICAL_MEASUREMENT",
+    "INVALID_SENSOR_VALUE",
+    "THERMAL_PHYSICS_INCONSISTENCY",
+    "REGIME_SHIFT_OOD",
+    "INSUFFICIENT_FORECAST_HISTORY",
+    "FORECAST_UNAVAILABLE",
+    "MULTIPLE_SIMULTANEOUS_FAILURES",
+    "DETERMINISTIC_REPEATED_EXECUTION",
+    "SOURCE_DATA_IMMUTABILITY"
+  ],
+  "m2_version": "1.0",
+  "m4_version": "1.0",
+  "m5_version": "1.0",
+  "m6_version": "1.0",
+  "m7_version": "1.0",
+  "m9_version": "1.0",
+  "m10_version": "1.0",
+  "m11_version": "1.0",
+  "no_scientific_changes": true
+}
