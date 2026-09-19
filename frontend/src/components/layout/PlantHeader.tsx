@@ -42,7 +42,7 @@ export const PlantHeader: React.FC<PlantHeaderProps> = ({
   lang,
   setLang,
 }) => {
-  const t = TRANSLATIONS[lang];
+  const t = (lang && TRANSLATIONS[lang]) || TRANSLATIONS.en;
   return (
     <header className="bg-[#071018] border-b border-[#15212d] px-4 py-2 flex flex-col xl:flex-row items-center justify-between gap-3 text-xs z-20 sticky top-0 shadow-lg">
       {/* Brand & System Title */}
