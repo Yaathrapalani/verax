@@ -7,10 +7,10 @@ interface IndustrialIntakeModalProps {
 }
 
 export const IndustrialIntakeModal: React.FC<IndustrialIntakeModalProps> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-
   const [uploadedFiles, setUploadedFiles] = useState<string[]>([]);
   const [isHovered, setIsHovered] = useState(false);
+
+  if (!isOpen) return null;
 
   const handleSimulatedDrop = (fileType: string) => {
     if (!uploadedFiles.includes(fileType)) {

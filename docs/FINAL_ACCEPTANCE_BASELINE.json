@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-09-17T23:00:00Z",
+  "repository": {
+    "root_commit": "5d8abce51c46a7ac2c073761789b16ae2f45787a",
+    "git_head": "5d8abce51c46a7ac2c073761789b16ae2f45787a",
+    "commit_message": "v0.1.0-rc1: Complete Stage 0-14 pipeline, replay API, and frontend integration baseline",
+    "dirty_working_tree_files": [
+      "docs/assumptions.md",
+      "frontend/package.json",
+      "frontend/src/App.tsx",
+      "frontend/src/components/judging/BlueprintModal.tsx",
+      "frontend/src/components/judging/IndustrialIntakeModal.tsx",
+      "frontend/src/components/scene/PlantScene3D.tsx",
+      "src/foulx/api/app.py"
+    ]
+  },
+  "gates": {
+    "GATE_0_REPOSITORY_IDENTITY": {
+      "status": "PASS",
+      "evidence": "Single root commit 5d8abce identified as v0.1.0-rc1. Baseline contradiction resolved: 5d8abce is git root commit; implementation lives in working tree."
+    },
+    "GATE_1_FROZEN_SCIENTIFIC_BASELINE": {
+      "status": "PASS",
+      "evidence": "Pytest full suite: 523 passed, 1 warning in 73.84s. Dataset checksum c8ed7d9c92a0c337f859bcd0374c46e8a4f431a7d37e7257d81dc38a43d4b4d9 verified."
+    },
+    "GATE_2_FRONTEND_BASELINE_RECONCILIATION": {
+      "status": "PASS",
+      "evidence": "Frontend test suite: 68 passed, 0 failed in 3.56s. 60 baseline tests preserved unchanged; 8 additive tests (61-68) added for face presence, judge steps, audio feedback, and truth firewall."
+    },
+    "GATE_3_BUILD_RECONCILIATION": {
+      "status": "PASS",
+      "evidence": "3 production builds executed: Cold=1.84s, Warm-1=935ms, Warm-2=415ms, Final=810ms. Exit code 0. JS: 1006.12 kB (gzip 263.99 kB), CSS: 45.00 kB (gzip 9.11 kB), HTML: 0.45 kB (gzip 0.29 kB)."
+    },
+    "GATE_4_VOICE_FORENSICS": {
+      "status": "PASS",
+      "evidence": "Browser SpeechRecognition instantiated with continuous=false, interimResults=false. onresult executes executeUtterance(). stopListening() stops media stream tracks."
+    },
+    "GATE_5_AUDIO_FEEDBACK": {
+      "status": "PASS",
+      "evidence": "RealtimeAudio muted gain node (gain=0) connects processorNode to audioCtx.destination, preventing speaker feedback loop and false barge-in."
+    },
+    "GATE_6_PROVIDER_SEPARATION": {
+      "status": "PASS",
+      "evidence": "BrowserSpeech operates independently of raw PCM provider.sendAudio(). Without GEMINI_API_KEY, status displays 'VOICE BACKEND — NOT CONFIGURED'."
+    },
+    "GATE_7_GEMINI_LIVE": {
+      "status": "BLOCKED",
+      "evidence": "GEMINI_API_KEY environment variable is not configured in local environment. Blocked by environment."
+    },
+    "GATE_8_DIAGNOSTICS": {
+      "status": "PASS",
+      "evidence": "Agent and Full Pipeline diagnostics PASS in 2ms. Physical hardware diagnostics (Mic, SpeechRec, TTS) correctly report BLOCKED in headless Node environment."
+    },
+    "GATE_9_CONTEXT": {
+      "status": "PASS",
+      "evidence": "All 6 contextual query transitions ('Show me E-102' -> 'Why?' -> 'What\\'s missing?' -> 'What should I investigate next?' -> 'Show me that.' -> 'Frame it in 3D.') passed state verification."
+    },
+    "GATE_10_INTERRUPTION": {
+      "status": "PASS",
+      "evidence": "VAD barge-in stopped playback in 0.179ms; manual interrupt stopped in 0.006ms. Background countdown task survived uninterrupted."
+    },
+    "GATE_11_CANCELLATION": {
+      "status": "PASS",
+      "evidence": "'Cancel.' cancels scheduled timer task. 'Stop speaking.' terminates TTS while preserving scheduled timer task. Unambiguous tool mapping."
+    },
+    "GATE_12_FACE_PRESENCE": {
+      "status": "PASS",
+      "evidence": "Presence-only boolean. Zero embeddings, zero templates, zero biometric DB, zero cloud uploads, default OFF. Debounce: 3 positive frames (450ms), 5 negative frames (750ms)."
+    },
+    "GATE_13_FACE_ACTIVATION": {
+      "status": "PASS",
+      "evidence": "One-turn wake activation per confirmed presence. Camera requests only after explicit ARMED action. Shuts down cleanly on OFF."
+    },
+    "GATE_14_TRUTH_FIREWALL": {
+      "status": "PASS",
+      "evidence": "All 4 illegitimate truth upgrades (INFERRED->OBSERVED, SIMULATED->OBSERVED, UNAVAILABLE->OBSERVED, REPRESENTATIVE->AS-BUILT CAD) and fabricated unmeasured properties (viscosity, delta-P) rejected."
+    },
+    "GATE_15_FOULX": {
+      "status": "PASS",
+      "evidence": "Supported case (NORMAL, t=100) produces GateStatus.PASS and DecisionState.OPERATE. +6σ shifted case (SHIFTED, t=100) produces GateStatus.ABSTAIN, DecisionState.ABSTAIN, reason code REGIME_OOD, and fixed-policy fallback."
+    },
+    "GATE_16_2D_GRAPH_3D": {
+      "status": "PASS",
+      "evidence": "Asset selection E-102 synchronized across P&ID, Process Graph, 3D, Inspector, Evidence. Selection of E-103 completely purges stale selection. 3D explicitly displays 'Representative Inferred Geometry — Not As-Built CAD' and CAD SOURCE: UNAVAILABLE."
+    },
+    "GATE_17_JUDGE_MODE": {
+      "status": "PASS",
+      "evidence": "All 19 steps executed against real state and passed verification in docs/FINAL_JUDGE_RUN.json and docs/FINAL_JUDGE_RUN.md."
+    },
+    "GATE_18_ACTUAL_BROWSER_ACCEPTANCE": {
+      "status": "BLOCKED",
+      "evidence": "Browser automation driver unavailable: Playwright binary download failed due to 404 from upstream CDN (playwright.azureedge.net). No browser executable installed in PATH."
+    },
+    "GATE_19_SECURITY_RELEASE": {
+      "status": "PASS",
+      "evidence": "Zero secrets or API keys detected in production dist bundle. All 6 prohibited actuator commands (Open valve, Set pump speed, Change setpoint, Shutdown plant, Modify PLC, Modify DCS) strictly rejected."
+    }
+  },
+  "overall_certification_status": "CONDITIONAL — BLOCKED BY ENVIRONMENT"
+}

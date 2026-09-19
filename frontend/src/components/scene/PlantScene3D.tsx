@@ -8,6 +8,8 @@ interface PlantScene2DProps {
   setSelectedAssetTag: (tag: string) => void;
   inspectionMode: InspectionMode;
   scenario: 'normal' | 'disturbed';
+  highlightedPath?: string[];
+  cameraFocusTag?: string | null;
 }
 
 export const PlantScene3D: React.FC<PlantScene2DProps> = ({
@@ -15,6 +17,8 @@ export const PlantScene3D: React.FC<PlantScene2DProps> = ({
   setSelectedAssetTag,
   inspectionMode,
   scenario,
+  highlightedPath = [],
+  cameraFocusTag,
 }) => {
   const mountRef = useRef<HTMLDivElement>(null);
 
@@ -229,12 +233,23 @@ export const PlantScene3D: React.FC<PlantScene2DProps> = ({
     return () => {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
+      scene.traverse((obj) => {
+        if ((obj as THREE.Mesh).isMesh) {
+          const mesh = obj as THREE.Mesh;
+          if (mesh.geometry) mesh.geometry.dispose();
+          if (Array.isArray(mesh.material)) {
+            mesh.material.forEach((m) => m.dispose());
+          } else if (mesh.material) {
+            mesh.material.dispose();
+          }
+        }
+      });
       if (container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
       }
       renderer.dispose();
     };
-  }, [selectedAssetTag, inspectionMode, scenario]);
+  }, [selectedAssetTag, inspectionMode, scenario, highlightedPath, cameraFocusTag]);
 
   return (
     <div className="relative w-full h-full bg-[#071018] overflow-hidden">
@@ -246,6 +261,7 @@ export const PlantScene3D: React.FC<PlantScene2DProps> = ({
         {REPRESENTATIVE_CDU_EQUIPMENT.filter((e) => e.isMonitoredByFoulX).map((eq) => {
           const isSelected = selectedAssetTag === eq.datasetTag || selectedAssetTag === eq.tag;
           const isAttn = eq.datasetTag === 'E02' && (scenario === 'disturbed' || eq.status === 'ATTENTION');
+          const isHighlighted = highlightedPath.includes(eq.tag) || (eq.datasetTag && highlightedPath.includes(eq.datasetTag));
           return (
             <div
               key={eq.tag}
@@ -253,6 +269,8 @@ export const PlantScene3D: React.FC<PlantScene2DProps> = ({
               className={`pointer-events-auto px-2.5 py-1 rounded border shadow-lg transition cursor-pointer flex items-center gap-1.5 ${
                 isSelected
                   ? 'bg-[#0284c7] text-white border-[#38bdf8] font-bold'
+                  : isHighlighted
+                  ? 'bg-[#0e7490] text-cyan-200 border-cyan-400 font-bold'
                   : isAttn
                   ? 'bg-[#7f1d1d] text-[#fca5a5] border-[#ef4444] font-bold'
                   : 'bg-[#0b1118]/90 text-[#9ca3af] border-[#1b2a3a] hover:text-white'
@@ -263,6 +281,33 @@ export const PlantScene3D: React.FC<PlantScene2DProps> = ({
             </div>
           );
         })}
+      </div>
+
+      {/* Geometry Quality & Provenance Panel (Defense against fake CAD claims) */}
+      <div className="absolute top-4 right-4 z-10 pointer-events-auto bg-[#071018]/95 border border-[#1e293b] p-3 rounded shadow-xl text-[10px] font-mono text-gray-300 w-64 space-y-1.5">
+        <div className="flex justify-between items-center border-b border-[#1e293b] pb-1">
+          <span className="font-bold text-white uppercase tracking-wider">Geometry Quality</span>
+          <span className="bg-amber-950/80 text-amber-300 border border-amber-800 px-1.5 py-0.5 rounded text-[9px] font-bold">
+            LEVEL L4
+          </span>
+        </div>
+        <div className="grid grid-cols-2 gap-1 text-[9px] text-gray-400">
+          <div>SOURCE: <span className="text-gray-200 font-semibold">P&ID-07</span></div>
+          <div>TYPE: <span className="text-amber-300 font-semibold">REPRESENTATIVE</span></div>
+          <div>TOPOLOGY: <span className="text-emerald-400 font-semibold">VERIFIED</span></div>
+          <div>SPATIAL: <span className="text-amber-300 font-semibold">INFERRED</span></div>
+          <div>DIMENSIONS: <span className="text-gray-300 font-semibold">PARTIAL</span></div>
+          <div>CAD SOURCE: <span className="text-rose-400 font-semibold">UNAVAILABLE</span></div>
+        </div>
+        <p className="text-[8px] text-gray-400 leading-tight border-t border-[#1e293b]/60 pt-1">
+          Representative mesh generated from graph heuristics. Not as-built plant CAD.
+        </p>
+      </div>
+
+      {/* Mandatory Engineering Truth Badge */}
+      <div className="absolute bottom-3 left-4 z-10 pointer-events-none bg-[#071018]/90 border border-[#1e293b] px-3 py-1 rounded text-[10px] font-mono text-gray-400 flex items-center gap-2">
+        <span className="w-2 h-2 rounded-full bg-amber-400"></span>
+        <span>Representative Inferred Geometry — Not As-Built CAD</span>
       </div>
     </div>
   );

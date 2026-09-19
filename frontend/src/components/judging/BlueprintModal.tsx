@@ -7,9 +7,9 @@ interface BlueprintModalProps {
 }
 
 export const BlueprintModal: React.FC<BlueprintModalProps> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-
   const [activeDoc, setActiveDoc] = useState<'PFD' | 'PID' | 'DATASHEET'>('PFD');
+
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
